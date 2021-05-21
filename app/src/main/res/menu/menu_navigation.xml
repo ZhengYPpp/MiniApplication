@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/check"
+        android:title="Check Item"
+        android:icon="@drawable/ic_search"/>
+
+    <item
+        android:id="@+id/send"
+        android:title="Send Item"
+        android:icon="@drawable/ic_send"/>
+
+    <item
+        android:id="@+id/account"
+        android:title="My Account"
+        android:icon="@drawable/ic_account"/>
+
+</menu>
