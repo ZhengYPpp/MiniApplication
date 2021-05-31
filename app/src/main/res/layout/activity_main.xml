@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/bg_01">
 
 
 
@@ -37,8 +38,9 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/itemDescription"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:layout_below="@id/info"
         android:padding="6dp"
         android:layout_marginTop="16dp"
@@ -57,23 +59,20 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/desText"
             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:text="submit"
+            />
+
     </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -88,8 +87,6 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
         android:layout_alignParentBottom="true"/>
-
-
 
 
 </RelativeLayout>

@@ -4,15 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CheckItem">
+    tools:context=".CheckItem"
+    android:padding="10dp"
+    android:background="@drawable/bg_01">
 
 
+    <RelativeLayout
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check Item"
-        android:textSize="50sp"
-        android:layout_centerInParent="true"/>
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+       />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/searchArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_below="@+id/titleText">
+
+        <EditText
+            android:id="@+id/searchInfo"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_search"
+            android:focusable="false"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textSize="8dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/searchArea">
+
+
+
+    </LinearLayout>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
