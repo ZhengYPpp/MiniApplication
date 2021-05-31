@@ -6,11 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MyAccount extends AppCompatActivity {
+    Button logoutBtn;
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -46,5 +51,16 @@ public class MyAccount extends AppCompatActivity {
             }
         });
 
+
+        logoutBtn = findViewById(R.id.logoutButton);
+        mAuth = FirebaseAuth.getInstance();
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Intent intent = new Intent(MyAccount.this,Login.class);
+                startActivity(intent);
+            }
+        });
     }
 }
