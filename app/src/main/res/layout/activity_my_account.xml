@@ -31,25 +31,81 @@
             android:layout_margin="15dp"
             />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Person 1"
-            android:layout_margin="15dp"
-            />
+            android:orientation="horizontal">
 
-        <EditText
+            <EditText
+                android:id="@+id/address1"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="Person 1"
+                android:layout_margin="15dp"
+                android:focusable="false"
+                />
+
+            <Button
+                android:id="@+id/delAddress1"
+                android:layout_width="40dp"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Person 2"
-            android:layout_margin="15dp"
-            />
-        <EditText
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/address2"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="Person 2"
+                android:layout_margin="15dp"
+                android:focusable="false"
+                />
+
+            <Button
+                android:id="@+id/delAddress2"
+                android:layout_width="40dp"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Person 3"
-            android:layout_margin="15dp"
-            />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/address3"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="Person 3"
+                android:layout_margin="15dp"
+                android:focusable="false"
+                />
+
+            <Button
+                android:id="@+id/delAddress3"
+                android:layout_width="40dp"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 

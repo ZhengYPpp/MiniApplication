@@ -97,9 +97,17 @@ public class Infomation extends AppCompatActivity {
                     documentReference.set(Address).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
+                            if (userRole.equals("Sender")||userRole.equals(("Receiver"))){
+                                GoBackMain(userName, userPhone, userPostcode, userRole);
+                            }else{
+                                GoBackAccount();
+                            }
+
 
                             Toast.makeText(Infomation.this,"OnSuccess :user Profile is created for "+userID,Toast.LENGTH_SHORT).show();
                         }
+
+
                     });
 
 
@@ -109,7 +117,7 @@ public class Infomation extends AppCompatActivity {
 
 
 
-                GoBackMain(userName, userPhone, userPostcode, userRole);
+
             }
         });
 
@@ -136,9 +144,13 @@ public class Infomation extends AppCompatActivity {
             i.putExtra("receiverCode",userPostcode);
         }
 
-
-
         startActivity(i);
+    }
+
+
+    private void GoBackAccount() {
+        Intent intent = new Intent(Infomation.this,MyAccount.class);
+        startActivity(intent);
     }
 
 }
