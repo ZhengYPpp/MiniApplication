@@ -64,6 +64,7 @@ public class Infomation extends AppCompatActivity {
                 String userPhone = phone.getText().toString().trim();
                 String userPostcode = postcode.getText().toString().trim();
                 String userAddress = adress.getText().toString().trim();
+                String userRole = role.getText().toString().trim();
 
                 if(TextUtils.isEmpty(userName)){
                     name.setError("This Name is Required");
@@ -86,22 +87,29 @@ public class Infomation extends AppCompatActivity {
                 }
 
                 userID = fAuth.getCurrentUser().getUid();
-                DocumentReference documentReference = fStore.collection("address").document(userID);
-                Map<String,Object> Address = new HashMap<>();
-                Address.put("name",userName);
-                Address.put("phone",userPhone);
-                Address.put("postcode",userPostcode);
-                Address.put("address",userAddress);
 
-                documentReference.set(Address).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(Infomation.this,"OnSuccess :user Profile is created for "+userID,Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    DocumentReference documentReference = fStore.collection(userRole).document(userID);
+                    Map<String,Object> Address = new HashMap<>();
+                    Address.put("name",userName);
+                    Address.put("phone",userPhone);
+                    Address.put("postcode",userPostcode);
+                    Address.put("address",userAddress);
+                    documentReference.set(Address).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                            Toast.makeText(Infomation.this,"OnSuccess :user Profile is created for "+userID,Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
 
-                GoBackMain();
+
+
+
+
+
+
+                GoBackMain(userName, userPhone, userPostcode, userRole);
             }
         });
 
@@ -109,8 +117,27 @@ public class Infomation extends AppCompatActivity {
 
     }
 
-    private void GoBackMain(){
+    private void GoBackMain(String userName, String userPhone, String userPostcode, String userRole){
         Intent i = new Intent(Infomation.this,MainActivity.class);
+
+        if (userRole.equals("Sender")){
+            i.putExtra("senderName",userName);
+            i.putExtra("senderPhone",userPhone);
+            i.putExtra("senderCode",userPostcode);
+            i.putExtra("receiverName","");
+            i.putExtra("receiverPhone","");
+            i.putExtra("receiverCode","");
+
+        }
+
+        if (userRole.equals("Receiver")){
+            i.putExtra("receiverName",userName);
+            i.putExtra("receiverPhone",userPhone);
+            i.putExtra("receiverCode",userPostcode);
+        }
+
+
+
         startActivity(i);
     }
 
